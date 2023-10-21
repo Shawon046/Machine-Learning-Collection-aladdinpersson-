@@ -1,0 +1,26 @@
+name: ap_torch_venv
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.8
+  - pytorch-cuda
+  - pip:
+    - pip
+    - numpy
+    - pandas
+    - matplotlib
+    - scikit-learn 
+    - seaborn
+    - tensorboard
+    - torchvision
+
+
+# conda env create --file req.yaml
+# conda activate 'name'-venv
+# Exporting my current setup to another yaml file
+# conda env export > environment.yml
+# conda remove -n my_env --all 
+# -- for deletion
