@@ -7,8 +7,8 @@ channels:
 dependencies:
   - python=3.8
   - pytorch-cuda
+  - pip
   - pip:
-    - pip
     - numpy
     - pandas
     - matplotlib
@@ -17,6 +17,7 @@ dependencies:
     - tensorboard
     - torchvision
     - torch_tb_profiler
+    - tqdm
 
 
 # conda env create --file req.yaml

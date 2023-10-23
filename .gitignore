@@ -14,3 +14,8 @@ ML/Pytorch/huggingface/notebooks/
 *.gz
 *-ubyte
 *logs
+
+# Ignoring the celeb image data set
+ML/Pytorch/GANs/3. WGAN/celeb_dataset/images
+ML/Pytorch/GANs/4. WGAN-GP/celeb_dataset/images
+*.zip

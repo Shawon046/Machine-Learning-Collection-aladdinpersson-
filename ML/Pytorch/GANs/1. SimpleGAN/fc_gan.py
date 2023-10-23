@@ -15,6 +15,7 @@ import torchvision.datasets as datasets
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 from torch.utils.tensorboard import SummaryWriter  # to print to tensorboard
+from tqdm import tqdm
 
 
 class Discriminator(nn.Module):
@@ -81,7 +82,7 @@ def main():
 
 
     for epoch in range(num_epochs):
-        for batch_idx, (real, _) in enumerate(loader):
+        for batch_idx, (real, _) in enumerate(tqdm(loader)):
             real = real.view(-1, 784).to(device)
             batch_size = real.shape[0]
 

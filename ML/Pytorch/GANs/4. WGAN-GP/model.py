@@ -8,7 +8,8 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 
 import torch
 import torch.nn as nn
-
+from tqdm import tqdm
+import time
 
 class Discriminator(nn.Module):
     def __init__(self, channels_img, features_d):
@@ -85,6 +86,15 @@ def initialize_weights(model):
 
 
 def test():
+    
+
+    # # Define a range of values you want to iterate over
+    # iterable = range(10)
+
+    # # Wrap the iterable with tqdm to create a progress bar
+    # for item in tqdm(iterable, desc="Processing", unit="item"):
+    #     # Simulate some work
+    #     time.sleep(0.1)
     N, in_channels, H, W = 8, 3, 64, 64
     noise_dim = 100
     x = torch.randn((N, in_channels, H, W))
@@ -93,6 +103,8 @@ def test():
     gen = Generator(noise_dim, in_channels, 8)
     z = torch.randn((N, noise_dim, 1, 1))
     assert gen(z).shape == (N, in_channels, H, W), "Generator test failed"
+    print('All good')
 
 
-# test()
+if __name__ == '__main__':
+    test()
