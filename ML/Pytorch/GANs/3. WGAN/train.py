@@ -24,7 +24,7 @@ BATCH_SIZE = 16
 IMAGE_SIZE = 64
 # IMAGE_SIZE = 28
 CHANNELS_IMG = 1
-# CHANNELS_IMG = 3
+CHANNELS_IMG = 3
 Z_DIM = 128
 NUM_EPOCHS = 5
 FEATURES_CRITIC = 64
@@ -45,9 +45,9 @@ transforms = transforms.Compose(
 
 def main_fn():
 
-    dataset = datasets.MNIST(root="dataset/", transform=transforms, download=True)
+    # dataset = datasets.MNIST(root="dataset/", transform=transforms, download=True)
     # comment mnist and uncomment below if you want to train on CelebA dataset
-    # dataset = datasets.ImageFolder(root="celeb_dataset", transform=transforms)
+    dataset = datasets.ImageFolder(root="celeb_dataset", transform=transforms)
     loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
 
     # initialize gen and disc/critic
@@ -131,7 +131,10 @@ def main_fn():
 
 
 if __name__ == '__main__':
-
+    print('---------- Checking Version of Virtual Environment before starting ---------------')
+    print("Torch version:",torch.__version__)
+    # print("Torch Vision version:",torchvision.__version__)
+    print("Is CUDA enabled?",torch.cuda.is_available())
 
     # numbers = list(range(10))
 
